@@ -1,4 +1,4 @@
-# 100 Days Of SwiftUI
+# 100 Days Of SwiftUI <img src="./Assets/swiftui-badge.png" width="88px" />
 
 *Projects, playgrounds, and other material made while following along with* [Paul Hudson’s 100 Days of SwiftUI course](https://www.hackingwithswift.com/100/swiftui)
 
