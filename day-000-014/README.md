@@ -27,6 +27,9 @@ It focuses on:
 
 ## Toughest quiz questions
 
+- Quizzes are worth doing to strengthen code reading capability
+
+
 ## Code snippets to remember
 
 ```swift
@@ -41,3 +44,4 @@ print(greeting + "y'all, yeehaw!")
 
 [The Swift Language Tour Guide](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/guidedtour/)
 [3 Hour Coding With Chris - YouTube Video](https://www.youtube.com/watch?v=Ulp1Kimblg0)
+[String interpolation super power](https://www.hackingwithswift.com/articles/178/super-powered-string-interpolation-in-swift-5-0)
