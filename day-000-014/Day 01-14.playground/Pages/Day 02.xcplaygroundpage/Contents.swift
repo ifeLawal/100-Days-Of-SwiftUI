@@ -33,3 +33,16 @@ let missionMessage = "Apollo " + String(number) + " landed on the moon"
 let interpolationMessage = "Apollo \(number) landed on the moon"
 
 print("5 * 5 = \(5 * 5)")
+
+
+// Checkpoint
+/*
+ Your goal is to write a Swift playground that:
+
+ Creates a constant holding any temperature in Celsius.
+ Converts it to Fahrenheit by multiplying by 9, dividing by 5, then adding 32.
+ Prints the result for the user, showing both the Celsius and Fahrenheit values.
+ */
+let tempInCelsius = 0
+let tempInFahrenheit = (tempInCelsius * 9 / 5) + 32
+print("Temperature in celsius is: \(tempInCelsius) and that temperature in Fahrenheit is: \(tempInFahrenheit)")
