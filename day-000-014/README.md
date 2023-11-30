@@ -23,7 +23,7 @@ It focuses on:
 - Swift Playground can be launched via Xcode, through File menu and choosing New > Playground > macOs > blank
 - Swift is camelCase
 - lets are constants, var are changeable variables
-- 
+- Swift enums are very powerful 
 
 ## Toughest quiz questions
 
@@ -63,6 +63,19 @@ import Cocoa
 
 var earthquakeStrengths = Set(1, 1, 2, 2) // not a valid set because the integers are not in an array
 var names = Set(["Sean", "Paul"]) // valid set
+```
+
+Swift conditionals are the same as in other programming languages. So if you have coded before this section is easy to pick up.
+```swift
+import Cocoa 
+
+if someCondition && otherCondition {
+
+} else if newCondition || differentCondition {
+
+} else {
+
+}
 ```
 
 # 🔗 Additional related links
