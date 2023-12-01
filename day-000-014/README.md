@@ -23,7 +23,10 @@ It focuses on:
 - Swift Playground can be launched via Xcode, through File menu and choosing New > Playground > macOs > blank
 - Swift is camelCase
 - lets are constants, var are changeable variables
-- Swift enums are very powerful 
+- Swift enums are very powerful
+- Swift Switch statements by default break once the case is true
+    - you can continue a Switch statement using fallthrough
+- ternary operators
 
 ## Toughest quiz questions
 

@@ -127,3 +127,89 @@ if transport == .airplane || transport == .helicopter {
 } else {
     print("I am going to hire a scooter now!")
 }
+
+//
+
+enum Weather {
+    case sun, rain, wind, snow, unknown
+}
+
+let forecast = Weather.sun
+
+if forecast == .sun {
+    print("It's a sunny day")
+} else if forecast == .rain {
+    print("Pack an umbrella")
+} else if forecast == .wind {
+    print("Brrr, strong headwinds are coming")
+} else if forecast == .rain {
+    print("Bundle up")
+} else {
+    print("Forecaster down :__;")
+}
+
+switch forecast {
+case .sun:
+    print("It's a sunny day")
+case .rain:
+    print("Pack an umbrella")
+case .snow:
+    print("Bundle up")
+case .wind:
+    print("Brrr, strong headwinds are coming")
+case .unknown:
+    print("Forecaster down :__;")
+}
+
+let direction = "South"
+
+switch direction {
+case "South":
+    print("Goin doing south")
+default:
+    print("Not sure where you are going")
+}
+
+
+let day = 5
+
+switch day {
+case 5:
+    print("5 golden rings")
+    fallthrough
+case 4:
+    print("4 calling birds")
+    fallthrough
+case 3:
+    print("3 French hens")
+    fallthrough
+case 2:
+    print("2 turtle doves")
+    fallthrough
+default:
+    print("A partridge in a pear tree")
+}
+
+// Ternary conditional
+
+let myAge = 18
+let canVote = age >= 18 ? "Yes" : "No" // Ternary - a condensed if statement. WTF Pneuomnic
+
+print(canVote)
+
+let hour = 23
+
+print(hour < 12 ? "It's before noon" : "It's after noon")
+
+let names = ["Jayne", "Kaylee", "Mal"]
+let crewCount = names.isEmpty ? "No one" : "\(names.count) people"
+
+enum Theme {
+    case light, dark
+}
+
+let theme = Theme.dark
+
+let background = theme == .dark ? "black" : "white"
+print(background)
+
