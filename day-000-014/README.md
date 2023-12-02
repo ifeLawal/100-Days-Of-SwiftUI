@@ -23,16 +23,43 @@ It focuses on:
 - Swift Playground can be launched via Xcode, through File menu and choosing New > Playground > macOs > blank
 - Swift is camelCase
 - lets are constants, var are changeable variables
+- Swift comparisons go across integers, strings, dates, and event enums (enums go by order of the case)
+- Conditional for swift is one to one in comparison to other coding languages
+    - if you have a coding background it will be easy. if not absorb it and continue since it will come with time
 - Swift enums are very powerful
 - Swift Switch statements by default break once the case is true
     - you can continue a Switch statement using fallthrough
-- ternary operators
+    - Swift with multiple conditions wraps the first && together
+- ternary operators are useful in cases where you need the condition passed to a parameter
 
 ## Toughest quiz questions
 
 - Quizzes are worth doing to strengthen code reading capability
 
 ```Swift
+import Cocoa
+
+/* Conditional quiz questions can be tough for new coders. Things to be aware of:
+    comparing different types
+    case sensitivity for words / letters
+    checking spelling
+    non-boolean types need a comparison / check that leads to a boolean
+    booleans by themselves evaluate directly to true or false
+*/
+var actualWage: Int = 22_000
+var medianWage: Double = 22_000
+var wages: [Int] = [22_000]
+if actualWage >= medianWage {
+	print("Success")
+} // fails due to incorrect type checks
+
+if actualWage {
+    print("Wage exists")
+} // fails because Int does not evaluate out to a boolean
+
+if actualWage == wages {
+    print("Success")
+} // fails due to incorrect types. it's an array compared with an integer
 
 ```
 
@@ -79,6 +106,13 @@ if someCondition && otherCondition {
 } else {
 
 }
+```
+
+Swift ternary operator
+```Swift
+import Cocoa
+
+print(hour < 12 ? "It's before noon" : "It's after noon")
 ```
 
 # 🔗 Additional related links

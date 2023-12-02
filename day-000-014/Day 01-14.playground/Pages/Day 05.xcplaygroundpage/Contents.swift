@@ -213,3 +213,6 @@ let theme = Theme.dark
 let background = theme == .dark ? "black" : "white"
 print(background)
 
+if theme {
+    print("We have a theme")
+}
