@@ -63,6 +63,40 @@ if actualWage == wages {
 
 ```
 
+Loops trick questions
+```Swift
+for beatle in "John", "Paul", "Ringo" { // commas do not equal array. The [] are needed
+	print("\(beatle) was in the Beatles")
+}
+
+// IE
+for beatleMember in ["John", "Paul", "Ringo"] {
+    print("\(beatleMember) was in the Beatles")
+}
+
+var numbers = [1, 2, 3, 4, 5, 6]
+for number in numbers {
+	if number % 2 == 0 { // Modulo gives a remainder value.
+		print(number)
+	}
+}
+
+var speeds = (65, 58, 72)
+for speed in speeds { // You cannot loop over a tuple like this
+	print("You were driving at \(speed)km/h.")
+}
+
+while 0 < 5 { // Beware of infinite loops!!
+	print("I'm counting to 5!")
+}
+
+let bottles = 10 // Beware of data types. Constants can't change
+while bottles > 0 {
+	bottles -= 2
+	print("\(bottles) green bottles.")
+}
+```
+
 ## Code snippets to remember
 
 The subtle difference between an array and a dictionary
@@ -85,6 +119,29 @@ enum Weekday {
 
 var day = Weekday.monday
 day = .tuesday
+```
+
+Switch statements
+```Swift
+import Cocoa
+enum Weather {
+    case sun, rain, wind, snow, unknown
+}
+
+let forecast = Weather.sun
+
+switch forecast {
+case .sun:
+    print("It's a sunny day")
+case .rain:
+    print("Pack an umbrella")
+case .snow:
+    print("Bundle up")
+case .wind:
+    print("Brrr, strong headwinds are coming")
+case .unknown:
+    print("Forecaster down :__;")
+}
 ```
 
 Sets are formed from arrays
@@ -115,9 +172,62 @@ import Cocoa
 print(hour < 12 ? "It's before noon" : "It's after noon")
 ```
 
+For and while loops
+```Swift
+import Cocoa
+
+let platforms = ["iOS", "macOs", "tvOs", "watchOS"]
+
+for os in platforms {
+    print("Swift works great on \(os).")
+}
+
+// Underscore if item is not used
+var lyric = "Haters gonna"
+
+for _ in 1..<5 { // < sign to specify not inclusive
+    lyric += " hate"
+}
+
+```
+
+Using range to access arrays
+```Swift
+import Cocoa
+
+let names = ["Piper", "Alex", "Suzanne", "Gloria"]
+
+print(names[0])
+
+print(names[1...3])
+
+print(names[1...])
+```
+
+Swift loop labels
+```Swift
+import Cocoa
+// the outerLoop labels the initial loop to use in the inner loop break
+outerLoop: for option1 in options {
+    for option2 in options {
+        for option3 in options {
+            print("In loop")
+            let attempt = [option1, option2, option3]
+
+            if attempt == secretCombination {
+                print("The combination is \(attempt)!")
+                break outerLoop // referencing breaking the outerLoop
+            }
+        }
+    }
+}
+```
+
+
 # 🔗 Additional related links
 
 [The Swift Language Tour Guide](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/guidedtour/)
 [3 Hour Coding With Chris - YouTube Video](https://www.youtube.com/watch?v=Ulp1Kimblg0)
 [String interpolation super power](https://www.hackingwithswift.com/articles/178/super-powered-string-interpolation-in-swift-5-0)
 [Array vs Set](https://www.avanderlee.com/swift/array-vs-set-differences-explained/)
+[Ranges in Swift by Antoine van der Lee](https://www.avanderlee.com/swift/ranges-explained/)
