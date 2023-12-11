@@ -207,7 +207,7 @@ print(names[1...])
 Swift loop labels
 ```Swift
 import Cocoa
-// the outerLoop labels the initial loop to use in the inner loop break
+// Day 06 - the outerLoop labels the initial loop to use in the inner loop break
 outerLoop: for option1 in options {
     for option2 in options {
         for option3 in options {
@@ -221,6 +221,32 @@ outerLoop: for option1 in options {
         }
     }
 }
+```
+
+
+```swift
+// Day 07 - Switch statement for integers can be covered using the ... range
+func buyCar(price: Int) {
+	switch price {
+	case 0...20_000:
+		print("This seems cheap.")
+	case 20_001...50_000:
+		print("This seems like a reasonable car.")
+	case 50_001...100_000:
+		print("This had better be a good car.")
+    default:
+        print("Yes!")
+	}
+}
+```
+
+```swift
+// Day 08
+do {
+    try someRiskyWork()
+ } catch {
+    print("Handle Error")
+ }
 ```
 
 
