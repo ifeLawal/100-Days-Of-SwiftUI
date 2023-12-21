@@ -31,6 +31,7 @@ It focuses on:
     - you can continue a Switch statement using fallthrough
     - Swift with multiple conditions wraps the first && together
 - ternary operators are useful in cases where you need the condition passed to a parameter
+- Swift has a concept called Closures, which is similar to Javascript Promises
 
 ## Toughest quiz questions
 
@@ -249,6 +250,52 @@ do {
  }
 ```
 
+```swift
+// Day 09 Closure
+// Basic closure is a variable storing a function
+let sayName = { (name: String) -> String in
+   "Hi \(name)"
+}
+let team = ["Gloria", "Suzanne", "Piper", "Tifanny", "Tasha"]
+
+
+// A full closure definition with a return, paramaters, etc.
+let capSortedTeam = team.sorted(by: { (name1: String, name2: String) -> Bool in
+    if name1 == "Suzanne" {
+        return true
+    } else if name2 == "Suzanne" {
+        return false
+    }
+    
+    return name1 < name2
+})
+
+// Middle of the road shorthand closure
+let sorted = team.sorted { a, b in
+    if a == "Suzanne" {
+        return true
+    } else if b == "Suzanne" {
+        return false
+    }
+    
+    return a < b
+}
+
+// Full shorthand closure
+let tOnly = team.filter { $0.uppercased().hasPrefix("T") }
+
+// Functions that take function params
+func makeArray(size: Int, using generator: () -> Int) -> [Int] {
+    var numbers = [Int]()
+    
+    for _ in 0..<size {
+        let newNumber = generator()
+        numbers.append(newNumber)
+    }
+    
+    return numbers
+}
+```
 
 # 🔗 Additional related links
 
