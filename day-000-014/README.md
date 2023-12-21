@@ -297,6 +297,67 @@ func makeArray(size: Int, using generator: () -> Int) -> [Int] {
 }
 ```
 
+```swift
+// Day 10 Structs
+// Struct computed properties
+struct EmployeeSimple {
+    let name: String
+    var vacationAllocated = 14
+    var vacationTaken = 0
+    
+    var vacationRemaining: Int {
+        get {
+            vacationAllocated - vacationTaken
+        }
+        
+        set {
+            vacationAllocated = vacationTaken + newValue
+        }
+    }
+}
+
+// Observers
+struct App {
+    var contacts = [String]() {
+        // Sets are good for animations
+        // Don't put too much work into the property observer
+        // It can cause performance problems
+        willSet {
+            print("Current value is: \(contacts)")
+            print("New value will be: \(newValue) ")
+        }
+        didSet {
+            print("There are now \(contacts.count) contacts")
+            print("Old value was: \(oldValue)")
+        }
+    }
+}
+
+// Custom initializers
+struct Player {
+    let name: String
+    let number: Int
+    
+    init(name: String, number: Int) {
+        self.name = name
+        self.number = number
+    }
+}
+
+// Extension initialization
+struct Employee {
+    var name: String
+    var yearsActive = 0
+}
+
+extension Employee {
+    init() {
+        self.name = "Anonymous"
+        print("Creating an anonymous employee…")
+    }
+}
+```
+
 # 🔗 Additional related links
 
 [The Swift Language Tour Guide](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/guidedtour/)

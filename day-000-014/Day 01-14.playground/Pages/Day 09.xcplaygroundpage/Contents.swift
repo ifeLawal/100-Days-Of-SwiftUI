@@ -154,8 +154,8 @@ let luckyNumbers = [7, 4, 38, 21, 16, 15, 12, 33, 31, 49]
 // Map them to strings in the format “7 is a lucky number”
 // Print the resulting array, one item per line
 
-let removeEven = {
-    return $0 % 2 != 0
+let removeEven = { (num: Int) -> Bool in
+    return !num.isMultiple(of: 2)
 }
 
 let ascSort = { (firstNumber: Int, secondNumber: Int) -> Bool in
