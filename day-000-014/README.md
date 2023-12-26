@@ -415,10 +415,33 @@ pizza.add(topping: "Mushrooms")
 ```
 
 ```swift
-// Day 13 Protocols
+// Day 13 Protocols - protcols create a bare minimum requirement for an upcoming object
 protocol Vehicle {
     func estimateTime(for distance: Int) -> Int
     func travel(distance: Int)
+}
+// Opaque return type - using a protocol generic return type
+protocol Vehicle {}
+func getRandomVehicle() -> some Vehicle {}
+// Extensions
+struct Book {
+    let title: String
+    let pageCount: Int
+    var readingHours: Int
+}
+
+extension Book {
+    init(title: String, pageCount: Int) {
+        self.title = title
+        self.pageCount = pageCount
+        self.readingHours = pageCount / 50
+    }
+}
+// Protocol + Extension mix
+extension Collection {
+    var isNotEmpty: Bool {
+        isEmpty == false
+    }
 }
 ```
 
