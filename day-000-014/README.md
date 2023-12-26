@@ -98,6 +98,34 @@ while bottles > 0 {
 }
 ```
 
+```swift
+// Struct accessors
+struct App {
+	var name: String
+	private var sales = 0 // this default covers the private
+    // while the init below covers the public
+    // without the init below though it would fail
+	init(name: String) {
+		self.name = name
+	}
+}
+
+let spotify = App(name: "Spotify")
+```
+
+```swift
+// struct vs class gotchas
+class SewingMachine {
+	var itemsMade = 0
+	mutating func makeBag(count: Int) { // mutating is only in structs
+		itemsMade += count
+	}
+}
+var machine = SewingMachine()
+machine.makeBag(count: 1)
+
+```
+
 ## Code snippets to remember
 
 The subtle difference between an array and a dictionary
@@ -358,6 +386,42 @@ extension Employee {
 }
 ```
 
+```swift
+// Day 11 Struct accessors
+struct FacebookUser {
+	private var privatePosts: [String]
+	public var publicPosts: [String]
+}
+let user = FacebookUser()
+// note that when a property is not public, you need to create an initializer on how it will be set or provide it with a default value
+```
+
+```swift
+// Day 12 Classes
+class Pizza {
+	private var toppings = [String]() // If properties have a default, then no init needed
+	func add(topping: String) {
+		toppings.append(topping)
+	}
+}
+var pizza = Pizza()
+pizza.add(topping: "Mushrooms")
+// You can make a class build upon functionality in another class
+// Swift won't generate a memberwise initializer for classes
+    // Give defaults or make an initializer
+// If you copy an instance of a class, both copies share the same data
+// We can add a deinitializer to run when the final copy is destroyed
+// Constant class instances can have their variable properties changed
+```
+
+```swift
+// Day 13 Protocols
+protocol Vehicle {
+    func estimateTime(for distance: Int) -> Int
+    func travel(distance: Int)
+}
+```
+
 # 🔗 Additional related links
 
 [The Swift Language Tour Guide](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/guidedtour/)
@@ -365,3 +429,4 @@ extension Employee {
 [String interpolation super power](https://www.hackingwithswift.com/articles/178/super-powered-string-interpolation-in-swift-5-0)
 [Array vs Set](https://www.avanderlee.com/swift/array-vs-set-differences-explained/)
 [Ranges in Swift by Antoine van der Lee](https://www.avanderlee.com/swift/ranges-explained/)
+[Access Controls](https://docs.swift.org/swift-book/LanguageGuide/AccessControl.html)

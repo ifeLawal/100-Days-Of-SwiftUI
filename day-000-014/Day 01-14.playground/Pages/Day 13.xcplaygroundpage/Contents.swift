@@ -1,7 +1,22 @@
 //: [Previous](@previous)
 
-import Foundation
+import Cocoa
 
-var greeting = "Hello, playground"
+// Protocols
 
-//: [Next](@next)
+class Vehicle {
+    
+}
+
+class Car {
+    
+}
+
+protocol Vehicle {
+    func estimateTime(for distance: Int) -> Int
+    func travel(distance: Int)
+}
+
+func commute(distance: Int, using vehicle: Car) {
+    // lots of code here
+}
