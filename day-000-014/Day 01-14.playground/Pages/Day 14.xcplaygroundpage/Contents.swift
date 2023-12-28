@@ -144,3 +144,12 @@ if let user = try? getUser(id: 23) {  // optional try will not through the error
 
 let userNew = (try? getUser(id: 23)) ?? "Anonymous"
 print(userNew)
+
+/*
+ Checkpoint 9
+ Write a function that accepts an optional array of integers, and returns one randomly. If the array is is missing or empty, return a random number in the range of 1 through 100
+ */
+
+func getRandomInt(array: [Int]?) -> Int {
+    return array?.randomElement() ?? Int.random(in: 1...100)
+}
