@@ -445,6 +445,48 @@ extension Collection {
 }
 ```
 
+```swift
+// Day 14 Optionals - indicates that a variable could either be of a certain type or nil
+var username: String? = nil
+
+if let unwrappedName = username {
+    print("We go a user: \(unwrappedName)")
+} else {
+    print("The optional was empty.")
+}
+
+// Optionals with guard
+// guard let runs code if the optional doesn't have a value
+func printSquare(of number: Int?) {
+    guard let number = number else {
+        print("Missing input")
+        return
+    }
+    
+    print("\(number) X \(number) is \(number * number)")
+}
+
+// Nil coalescing
+let favorite = tvShows.randomElement() ?? "None" // the ?? is the coalescing which allows us to set a default
+
+// Function chaining
+struct NewBook {
+    let title: String
+    let author: String?
+}
+
+var newbook: NewBook? = nil
+let newAuthor = newbook?.author?.first?.uppercased() ?? "A"
+
+let capitals = ["Scotland": "Edinburgh", "Wales": "Cardiff"]
+let scottishCapital = capitals["Scotland"]?.uppercased()
+
+// Optional throws
+if let user = try? getUser(id: 23) {  // optional try will not through the error
+    print("User: \(user)")
+}
+```
+
 # 🔗 Additional related links
 
 [The Swift Language Tour Guide](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/guidedtour/)
@@ -453,3 +495,5 @@ extension Collection {
 [Array vs Set](https://www.avanderlee.com/swift/array-vs-set-differences-explained/)
 [Ranges in Swift by Antoine van der Lee](https://www.avanderlee.com/swift/ranges-explained/)
 [Access Controls](https://docs.swift.org/swift-book/LanguageGuide/AccessControl.html)
+[Brian Voong on Swift Optionals](https://www.youtube.com/watch?v=7a7As0uNWOQ)
+[More about optional chaining](https://andybargh.com/optional-chaining/)
