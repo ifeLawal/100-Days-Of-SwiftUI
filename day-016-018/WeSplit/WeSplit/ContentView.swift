@@ -18,14 +18,18 @@ struct ContentView: View {
     private var currency = Locale.current.currency?.identifier ?? "USD"
     
     let tipPercentages = [10, 15, 20, 25, 0]
-    
-    var totalPerPerson: Double {
-        // calculate the total per person here
-        let peopleCount = Double(numberOfPeople + 2)
+    var grandTotal: Double {
         let tipSelection = Double(tipPercentage)
         
         let tipValue = checkAmount / 100 * tipSelection
         let grandTotal = checkAmount + tipValue
+        
+        return grandTotal
+    }
+    
+    var totalPerPerson: Double {
+        let peopleCount = Double(numberOfPeople + 2)
+        // calculate the total per person here
         let amountPerPerson = grandTotal / peopleCount
         
         return amountPerPerson
@@ -44,20 +48,28 @@ struct ContentView: View {
                             Text("\($0) people")
                         }
                     }
-                    .pickerStyle(.navigationLink)
                 }
                 
                 Section("How much do you want to tip?") {
                     Picker("Tip percentage", selection: $tipPercentage) {
-                        ForEach(tipPercentages, id: \.self) {
+                        ForEach(0..<101) {
                             Text($0, format: .percent)
                         }
+                        /*
+                         ForEach(tipPercentages, id: \.self) {
+                            Text($0, format: .percent)
+                        }
+                         */
                     }
-                    .pickerStyle(.segmented)
+                    .pickerStyle(.wheel)
                 }
                 
-                Section {
+                Section("Amount per person") {
                     Text(totalPerPerson, format: .currency(code: currency))
+                }
+                
+                Section("Total amount") {
+                    Text(grandTotal, format: .currency(code: currency))
                 }
             }
             .navigationTitle("WeSplit!")

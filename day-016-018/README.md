@@ -6,8 +6,22 @@ _Follow along at https://www.hackingwithswift.com/100/swiftui/16_.
 # 📒 Notes
 - Day one goes through Form, NavigationStack, @State, Buttons, Picker, and 
 - Day two involved putting those items together to build out the WeSplit application
+- Day three is review of the code that was just written 
+- SwiftUI allows no more than 10 child views inside each parent
+    - If you want more you should place your views inside groups
+- The keyboardType() modifier lets us change the keyboard that is shown when a text field is active.
+- All SwiftUI views must have a body property
+- SwiftUI doesn't allow more than 10 hard-coded items inside a parent, but views created using ForEach don't count towards that limit
+- Whenever an @State property changes, Swift re-invokes our body property
+    - This behavior forces all values inside the body to be re-evaluated, making sure they are updated for the changes
+- We can send a string to the navigationTitle() modifier to place a title at the top of our navigation view.
+- All SwiftUI views must inherit from the View protocol
 
 <img src="./Assets/WeSplit_App_Pre_Challenge.png" width="88px" />
+
+- 
+
+<img src="./Assets/WeSplit_App_Post_Challenge.png" width="88px" />
 
 ## Code snippets to remember
 
@@ -40,7 +54,6 @@ struct ContentView: View {
 ```
 
 ```swift
-
 // code inside a ContentView
 @State private var name = "" // Two way binding
     
