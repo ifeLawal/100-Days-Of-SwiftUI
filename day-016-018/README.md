@@ -17,17 +17,10 @@ _Follow along at https://www.hackingwithswift.com/100/swiftui/16_.
 - We can send a string to the navigationTitle() modifier to place a title at the top of our navigation view.
 - All SwiftUI views must inherit from the View protocol
 
-<div style="text-align:center">
-<div style="display:inline-block;padding:0px 10px;text-align:center">
-    <div style="font-size:.8rem;padding:5px 0px">WeSplit Day 18</div>
-    <img src="../Assets/WeSplit_App_Pre_Challenge.png" width="88px" />
-</div>
+WeSplit Complete            |  WeSplit Addons
+:-------------------------:|:-------------------------:
+![](../Assets/WeSplit_App_Pre_Challenge.png)  |  ![](../Assets/WeSplit_App_Post_Challenge.png)
 
-<div style="display:inline-block;padding:0px 10px;text-align:center">
-    <div style="font-size:.8rem;padding:5px 0px">WeSplit Addons</div>
-<img src="../Assets/WeSplit_App_Post_Challenge.png" width="88px" />
-</div>
-</div>
 
 ## Code snippets to remember
 
