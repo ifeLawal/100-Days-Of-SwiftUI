@@ -8,12 +8,12 @@
 import SwiftUI
 
 protocol Converter {
-    func convertInput(input: Int, fromUnit: String, toUnit: String) -> Int
+    func convertInput(input: Double, fromUnit: String, toUnit: String) -> Double
 }
 
 struct TemperatureConverter: Converter {
     // Fahrenheit to celsius
-    func convertInput(input: Int, fromUnit: String, toUnit: String) -> Int {
+    func convertInput(input: Double, fromUnit: String, toUnit: String) -> Double {
         switch fromUnit {
         case "celsius":
             switch toUnit {
@@ -49,7 +49,7 @@ struct TemperatureConverter: Converter {
 }
 
 struct ContentView: View {
-    @State private var userValue = 0
+    @State private var userValue = 0.0
     @State private var currentUnit = "celsius"
     @State private var conversionUnit = "fahrenheit"
     
@@ -58,8 +58,8 @@ struct ContentView: View {
         temperatureUnits.filter { $0 != currentUnit }
     }
     
-    func convertUserValue(_ converter: Converter) -> Int {
-        converter.convertInput(input: userValue, fromUnit: currentUnit, toUnit: conversionUnit)
+    func convertUserValue(_ converter: Converter) -> Double {
+        converter.convertInput(input: userValue, fromUnit: currentUnit, toUnit: conversionUnit).rounded()
     }
     let temperatureConverter = TemperatureConverter()
     
