@@ -52,8 +52,10 @@ struct ContentView: View {
     @State private var userValue = 0.0
     @State private var currentUnit = "celsius"
     @State private var conversionUnit = "fahrenheit"
+    @State private var currentConversion = "Temperature"
     
     let temperatureUnits = ["celsius", "fahrenheit", "kelvin"]
+    let conversionTypes = ["Temperature", "Length", "Distance"]
     var possibleTemperatureConversion: [String] {
         temperatureUnits.filter { $0 != currentUnit }
     }
@@ -66,23 +68,29 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Picker("Select input unit", selection: $currentUnit) {
-                    ForEach(temperatureUnits, id: \.self) {
-                        Text($0)
+                Section("What is your conversion unit") {
+                    Picker("Select conversion", selection: $currentConversion) {
+                        ForEach(conversionTypes, id: \.self) {
+                            Text($0)
+                        }
                     }
                 }
                 
                 Section("Input your temperature") {
                     TextField("Input value", value: $userValue, format: .number)
-                }
-                
-                Picker("Conversion unit", selection: $conversionUnit) {
-                    ForEach(possibleTemperatureConversion, id: \.self) {
-                        Text($0)
+                    Picker("Select input unit", selection: $currentUnit) {
+                        ForEach(temperatureUnits, id: \.self) {
+                            Text($0)
+                        }
                     }
                 }
                 
                 Section("Your temperature in Celsius") {
+                    Picker("Conversion unit", selection: $conversionUnit) {
+                        ForEach(possibleTemperatureConversion, id: \.self) {
+                            Text($0)
+                        }
+                    }
                     Text(convertUserValue(temperatureConverter), format: .number)
                 }
             }.navigationTitle("WeConvert")
