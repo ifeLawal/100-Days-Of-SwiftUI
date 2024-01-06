@@ -5,8 +5,8 @@ _Follow along at https://www.hackingwithswift.com/100/swiftui/20.
 
 # 📒 Notes
 - This section involves learning VStack, HStack, ZStack, Spacers, etc.
-- Color(), frames, gradients, buttons, image, alerts
-
+- Color(), frames, gradients (angular, linear, radial), buttons, image, alerts
+- Reminder that stacks have a limit of 10 views
 
 GuessThatFlag Complete            |
 :-------------------------:|
