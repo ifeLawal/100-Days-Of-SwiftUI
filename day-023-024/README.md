@@ -1,10 +1,11 @@
-# Day __: 
+# Day _23 - 24: 
 
 
-_Follow along at https://www.hackingwithswift.com/100/swiftui/23.
+_Follow along at https://www.hackingwithswift.com/100/swiftui/.
 
 # 📒 Notes
-- The challenge description is: build an app that handles unit conversions: users will select an input unit and an output unit, then enter a value, and see the output of the conversion.
+- Modifier order matters
+- 
 
 WeConvert Complete            |
 :-------------------------:|
@@ -14,48 +15,65 @@ WeConvert Complete            |
 ## 👨🏾‍💻 Code snippets to remember
 
 ```swift
-// The picker code is something I'm still hazy on
-Picker("Conversion unit", selection: $conversionUnit) {
-    ForEach(possibleTemperatureConversion, id: \.self) {
-        Text($0)
-    }
-    /*
-    ForEach(0..<101) {
-        Text($0, format: .number)
-    }
-    */
-}
+// Views take up just as much space as they are designated
+        VStack {
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundColor(.accentColor)
+            Text("Hello, world!")
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity) // this frame makes this view take up all the space on the screen
+        .background(Color.red)
 ```
 
 ```swift
-// I utilized a protocol in this challenge which allows for subbing in a different class for the conversion, aka going from temperature to length
-protocol Converter {
-    func convertInput(input: Int, fromUnit: String, toUnit: String) -> Int
-}
+// Views care about modifier order
+        VStack {
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundColor(.accentColor)
+            Text("Hello, world!")
+        }
+        .background(.red)
+        .frame(width: 200, height: 200)
 
-struct TemperatureConverter: Converter {
-    // Fahrenheit to celsius
-    func convertInput(input: Int, fromUnit: String, toUnit: String) -> Int {
-        // lots of switch conversion code
-    }
-}
+        // is different the same as 
+                VStack {
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundColor(.accentColor)
+            Text("Hello, world!")
+        }
+        .frame(width: 200, height: 200)
+        .background(.red)
+```
 
-struct ContentView: View {
-    
-    // other code
+```swift
+// Views care about modifier order
+        VStack {
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundColor(.accentColor)
+            Text("Hello, world!")
+        }
+        .background(.red)
+        .frame(width: 200, height: 200)
 
-    let temperatureConverter = TemperatureConverter()
-
-    func convertUserValue(_ converter: Converter) -> Int {
-        converter.convertInput(input: userValue, fromUnit: currentUnit, toUnit: conversionUnit)
-    }
-
-    // other code
-
-    Section("Your temperature in Celsius") {
-        Text(convertUserValue(temperatureConverter), format: .number)
-    }
-}
+        // is different the same as 
+                VStack {
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundColor(.accentColor)
+            Text("Hello, world!")
+        }
+        .padding()
+        .background(.red)
+        .padding()
+        .background(.blue)
+        .padding()
+        .background(.green)
+        .padding()
+        .background(.yellow)
 ```
 
 # 🔗 Additional related links

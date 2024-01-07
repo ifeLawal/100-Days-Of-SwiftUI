@@ -8,7 +8,7 @@ _Follow along at https://www.hackingwithswift.com/100/swiftui/19.
 
 WeConvert Complete            |
 :-------------------------:|
-![](../Assets/WeSplit_App_Pre_Challenge.png)  |
+![](../day-019/WeConvert_V01.png)  |
 
 
 ## 👨🏾‍💻 Code snippets to remember

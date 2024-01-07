@@ -4,13 +4,13 @@
 _Follow along at https://www.hackingwithswift.com/100/swiftui/20.
 
 # 📒 Notes
-- This section involves learning VStack, HStack, ZStack, Spacers, etc.
+- This section involves learning VStack, HStack, ZStack, Spacers, etc. through working through a game project
 - Color(), frames, gradients (angular, linear, radial), buttons, image, alerts
 - Reminder that stacks have a limit of 10 views
 
-GuessThatFlag Complete            |
-:-------------------------:|
-![](..)  |
+GuessThatFlag Complete            |     GuessThatFlag Addons            |
+:-------------------------:|:-------------:|
+![](../day-020-022/Guess_The_Flag_V01.png)  |![](../day-020-022/Guess_The_Flag_V02.png) |
 
 
 ## 👨🏾‍💻 Code snippets to remember

@@ -19,7 +19,7 @@ _Follow along at https://www.hackingwithswift.com/100/swiftui/16_.
 
 WeSplit Complete            |  WeSplit Addons
 :-------------------------:|:-------------------------:
-![](../Assets/WeSplit_App_Pre_Challenge.png)  |  ![](../Assets/WeSplit_App_Post_Challenge.png)
+![](../day-016-018/WeSplit_App_Pre_Challenge.png)  |  ![](../day-016-018/WeSplit_App_Post_Challenge.png)
 
 
 ## Code snippets to remember
