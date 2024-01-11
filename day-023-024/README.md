@@ -90,21 +90,179 @@ WeConvert Complete            |
 ```
 
 ```swift
-// Conditional Modifiers
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+// Conditional Modifiers - preferred over using if else logic. if else logic creates multiple views
+    @State private var useRedText = false
+
+        var body: some View {
+            Button("Hello, world!") {
+                useRedText.toggle()
+            }
+            .foregroundStyle(useRedText ? .red : .blue)
         }
-        .padding()
-        .background(.red)
-        .padding()
-        .background(.blue)
-        .padding()
-        .background(.green)
-        .padding()
-        .background(.yellow)
+```
+
+```swift
+// Environment Modifiers - styles that go on children views
+        var body: some View {
+            VStack {
+                Text("Gryffindor")
+                    .font(.largeTitle)
+                Text("Hufflepuff")
+                Text("Ravenclaw")
+                Text("Slytherin")
+            }
+            .font(.title) // this will modify all the styles in children
+            .blur(radius: 5) // blur is a regular modifier and it's modifiers are added to VStack
+        }
+```
+
+```swift
+// View as properties - styles that go on children views
+        let motto1 = Text("Draco dormiens")
+        let motto2 = Text("Lorem ipsum")
+        var motto3: some View { // computed
+            Text("New motto")
+        }
+
+        // @ViewBuilder var spells: some View {
+        var spells: some View {
+            // Group {  an option for multiple views
+            VStack {
+                Text("Hello")
+                Text("World")
+            }
+        }
+
+        var body: some View {
+            VStack {
+                motto1
+                    .foregroundStyle(.red)
+                motto2
+                    .foregroundStyle(.blue)
+            }
+            .padding()
+        }
+```
+
+```swift
+// Composition - views that layer on other modifiers
+// combining smaller views into bigger ones
+struct CapsuleText: View {
+    var text: String
+
+    var body: some View {
+        Text(text)
+            .font(.largeTitle)
+            .padding()
+            // .foregroundStyle(.white)
+            .background(.blue)
+            .clipShape(.capsule)
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
+        VStack(spacing: 10) {
+            CapsuleText("First")
+                .foregroundStyle(.white)
+            CapsuleText("Second")
+                .foregroundStyle(.lightgreen)
+        }
+    }
+}
+```
+
+```swift
+// Custom modifiers - using View extension you can create your own modifiers
+// you can have parameters alongside it if you define a ViewModifier struct
+struct Title: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.largeTitle)
+            .foregroundStyle(.white)
+            .padding()
+            .background(.blue)
+            .clipShape(Rectangle(cornerRadius: 10))
+
+    }
+}
+
+extension View {
+    func titleStyle() -> some View {
+        modifier(Title())
+    }
+}
+
+struct Watermark: ViewModifier {
+    var text: String
+
+    func body(content: Content) -> some View {
+        ZStack(alignment: .bottomTrailing) {
+            content
+
+            Text(text)
+                .font(.largeTitle)
+                .foregroundStyle(.white)
+                .padding(5)
+                .background(.black)
+        }
+    }
+}
+
+extension View {
+    func watermarked(with text: String) -> some View {
+        modifier(Watermark(text: text))
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
+        VStack {
+            Color.blue
+                .frame(width: 200, height: 200)
+                .watermarked(with: "Hacking with Swift!")
+            Text("Hello, world!")
+                // .modifier(Title())
+                .titleStyle()
+        }
+    }
+}
+
+```
+
+```swift
+// Custom containers - very complex and likely not to be used often
+// Generics, any content can be passed as long as it is a view
+struct GridStack<Content: View>: View {
+    let rows: Int
+    let columns: Int
+    let content: (Int, Int) -> Content
+    // ViewBuilder let content: (Int, Int) -> Content
+
+    var body: some View {
+        VStack {
+            ForEach(0..<rows, id: \.self) { row in
+                HStack {
+                    ForEach(0..<columns, id: \.self) { column in
+                        content(row, column)
+                    }
+                }
+            }
+        }
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
+        GridStack(rows: 4, columns: 4) { row, col in
+            HStack { // can remove this if @ViewBuilder in place
+                Image(systemName: "\(row * 4 + col).circle")
+                Text("R\(row) C\(col)")
+            }
+        }
+    }
+}
+
 ```
 
 # 🔗 Additional related links
