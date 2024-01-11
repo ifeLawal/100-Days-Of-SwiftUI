@@ -9,14 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        Button("Hello, world!") {
+            print(type(of: self.body)) // self.body provides the underlying type which includes the modifiers
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.red)
+        .frame(width: 200, height: 200)
+        .background(.red)
     }
 }
 
