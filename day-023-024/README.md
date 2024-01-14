@@ -7,10 +7,7 @@ _Follow along at https://www.hackingwithswift.com/100/swiftui/23.
 - Modifier order matters
 - ViewBuilder and TupleViews happen under the hood for Swift UI to return multiple nested Views and Views that are side by side so developers can just use the views
 - Utilize spacers to get the right proportions for content across different screen sizes
-
-WeConvert Complete            |
-:-------------------------:|
-![](../Assets/WeSplit_App_Pre_Challenge.png)  |
+- This technique lesson focuses on understanding structs and ways to build out more complex interfaces
 
 
 ## 👨🏾‍💻 Code snippets to remember
