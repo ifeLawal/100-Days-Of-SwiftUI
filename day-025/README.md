@@ -19,19 +19,76 @@ _Follow along at https://www.hackingwithswift.com/100/swiftui/25.
 - How to break up your code into small parts using view composition and custom view modifiers, which in turn allows us to build more complex programs without getting lost in code.
 - All Views we create in SwiftUI unwrap until they get down to primitive views like: Text, Image, Color, Spacer
 
-WeConvert Complete            |
+Rock Paper Scissors Complete            |
 :-------------------------:|
-![](..)  |
+![](../day-025/RockPaperScissors.png)  |
 
 
 ## 👨🏾‍💻 Code snippets to remember
 
 ```swift
+// This is not to remember for use, but more so to understand how @State works
+struct ContentView: View {
+    @State private var selection = 0
 
+    var body: some View {
+        let binding = Binding(
+            // Using the setters and getters as a pass through to change the values from the methods the variable is bound to
+            get: { selection },
+            set: { selection = $0 }
+        )
+
+        return VStack {
+            Picker("Select a number", selection: binding) {
+                ForEach(0..<3) {
+                    Text("Item \($0)")
+                }
+            }
+            .pickerStyle(.segmented)
+        }
+    }
+}
 ```
 
 ```swift
+// 
+@State var agreedToTerms = false
+@State var agreedToPrivacyPolicy = false
+@State var agreedToEmails = false
 
+    var body: some View {
+        let agreedToAll = Binding<Bool>(
+            get: {
+                agreedToTerms && agreedToPrivacyPolicy && agreedToEmails
+            },
+            set: {
+                agreedToTerms = $0
+                agreedToPrivacyPolicy = $0
+                agreedToEmails = $0
+            }
+        )
+        
+        return VStack {
+            Toggle("Agree to terms", isOn: $agreedToTerms)
+            Toggle("Agree to privacy policy", isOn: $agreedToPrivacyPolicy)
+            Toggle("Agree to receive shipping emails", isOn: $agreedToEmails)
+            Toggle("Agree to all", isOn: agreedToAll)
+        }
+    }
+```
+
+```swift
+// Some crucial code used for the project, that still needs some practice for me
+Button("Words", action: someFunc)
+Button{ 
+    somFunc()
+} label: {
+    SomeView()
+}
+.alert("alertMessage", isPresent: bool) {
+    Button("Ok", action: reset)
+}
+Color(red: 1.0, blue: 1.0, green: 1.0, opacity: 1.0)
 ```
 
 # 🔗 Additional related links

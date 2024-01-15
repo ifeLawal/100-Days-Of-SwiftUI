@@ -15,6 +15,11 @@ If you are looking for a full reference on SwiftUI, the [About SwiftUI](https://
 
 </details>
 
+### General hotkeys
+
+- option + cmd + p: refresh content preview
+- cmd + r: launch simulator
+
 ## Projects
 
 To be updated as I get through the projects
