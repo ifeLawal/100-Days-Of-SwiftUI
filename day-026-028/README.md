@@ -5,9 +5,12 @@ _Follow along at https://www.hackingwithswift.com/100/swiftui/26.
 
 # 📒 Notes
 - This introduces Create ML and Core ML which is built into swift
-- 
+- VStacks in forms stick together. Where as Sections have a space after them to separate them from each other.
+- Significant difference between a Picker vs Slider or Stepper, is that a Picker does not have a step amount. It moves according to the array you provide.
+    - You can get around this limitation by using `Array(stride(from: 4.0, through: 12.0, by: 0.25))` which allows you to create an array with a step increment of your choice
 
-WeConvert Complete            |
+
+BetterRest Complete            |
 :-------------------------:|
 ![](..)  |
 

@@ -18,6 +18,8 @@ struct ContentView: View {
     @State private var alertMessage = ""
     @State private var showAlert = false
     
+    private var sleepAmountArray = Array(stride(from: 4.0, through: 12.0, by: 0.25))
+    
     // defaults wake up to 7am
     static var defaultWakeTime: Date {
         var components = DateComponents()
@@ -40,7 +42,14 @@ struct ContentView: View {
                     Text("Desired amount of sleep")
                         .font(.headline)
                     
-                    Stepper("\(sleepAmount.formatted()) hours", value: $sleepAmount, in: 4...12, step: 0.25)
+//                    Stepper("\(sleepAmount.formatted()) hours", value: $sleepAmount, in: 4...12, step: 0.25)
+                    
+                    Picker("Sleep Amount", selection: $sleepAmount) {
+                        ForEach(sleepAmountArray, id: \.self) {
+                            Text("\($0.formatted())")
+                        }
+                    }
+                    
                 }
                 VStack(alignment: .leading, spacing: 0) {
                     Text("Daily coffe intake")
