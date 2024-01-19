@@ -31,10 +31,31 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             Form {
+                let wakeUpBinding = Binding(
+                    get: { wakeUp },
+                    set: {
+                        wakeUp = $0
+                        calculateBedTime()
+                    })
+                let sleepAmountBinding = Binding(
+                    get: { sleepAmount },
+                    set: {
+                        sleepAmount = $0
+                        calculateBedTime()
+                    }
+                )
+                let coffeeAmountBinding = Binding(
+                    get: { coffeeAmount },
+                    set: {
+                        coffeeAmount = $0
+                        calculateBedTime()
+                    }
+                )
+                
                 VStack(alignment: .leading, spacing: 0) {
                     Text("When do you want to wake up?")
                         .font(.headline)
-                    DatePicker("Please select a date", selection: $wakeUp, displayedComponents: .hourAndMinute)
+                    DatePicker("Please select a date", selection: wakeUpBinding, displayedComponents: .hourAndMinute)
                         .labelsHidden()
                 }
                 
@@ -44,7 +65,7 @@ struct ContentView: View {
                     
 //                    Stepper("\(sleepAmount.formatted()) hours", value: $sleepAmount, in: 4...12, step: 0.25)
                     
-                    Picker("Sleep Amount", selection: $sleepAmount) {
+                    Picker("Sleep Amount", selection: sleepAmountBinding) {
                         ForEach(sleepAmountArray, id: \.self) {
                             Text("\($0.formatted())")
                         }
@@ -58,16 +79,22 @@ struct ContentView: View {
                     // coffeeAmount == 1 ? "1 cup" : "\(coffeeAmount) cups"
                     Stepper("^[\(coffeeAmount) cup](inflect: true)", value: $coffeeAmount, in: 1...20)
                 }
+                
+                Section("Recommended sleep time") {
+                    Text("\(alertMessage)")
+                }
             }
             .navigationTitle("BetterRest")
+            /*
             .toolbar {
                 Button("Calculate", action: calculateBedTime)
-            }
-            .alert(alertTitle, isPresented: $showAlert) {
+            }            
+             .alert(alertTitle, isPresented: $showAlert) {
                 Button("OK") {}
             } message: {
                 Text(alertMessage)
             }
+             */
         }
     }
     func calculateBedTime() {
