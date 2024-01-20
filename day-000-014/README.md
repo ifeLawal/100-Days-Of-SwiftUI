@@ -456,7 +456,7 @@ if let unwrappedName = username {
 }
 
 // Optionals with guard
-// guard let runs code if the optional doesn't have a value
+// "guard let" runs code if the optional doesn't have a value
 func printSquare(of number: Int?) {
     guard let number = number else {
         print("Missing input")

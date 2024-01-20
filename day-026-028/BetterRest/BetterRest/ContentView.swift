@@ -77,7 +77,7 @@ struct ContentView: View {
                         .font(.headline)
                     
                     // coffeeAmount == 1 ? "1 cup" : "\(coffeeAmount) cups"
-                    Stepper("^[\(coffeeAmount) cup](inflect: true)", value: $coffeeAmount, in: 1...20)
+                    Stepper("^[\(coffeeAmount) cup](inflect: true)", value: coffeeAmountBinding, in: 1...20)
                 }
                 
                 Section("Recommended sleep time") {
@@ -88,7 +88,7 @@ struct ContentView: View {
             /*
             .toolbar {
                 Button("Calculate", action: calculateBedTime)
-            }            
+            }
              .alert(alertTitle, isPresented: $showAlert) {
                 Button("OK") {}
             } message: {

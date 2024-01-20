@@ -12,7 +12,7 @@ _Follow along at https://www.hackingwithswift.com/100/swiftui/26.
 
 BetterRest Complete            |
 :-------------------------:|
-![](..)  |
+![](../day-026-028/BetterRest.png)  |
 
 
 ## 👨🏾‍💻 Code snippets to remember
