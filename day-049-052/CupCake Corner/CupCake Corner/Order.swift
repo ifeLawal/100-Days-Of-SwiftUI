@@ -50,7 +50,20 @@ class Order: Codable {
         return true
     }
     
-    var cost: Decimal {
+    var cakeCost: Decimal {
+        // $2 per cake && complicated cakes cost more
+        return 2 + Decimal(type) / 2
+    }
+    
+    var frostingCost: Decimal {
+        return 1
+    }
+    
+    var sprinklesCost: Decimal {
+        return 0.5
+    }
+    
+    var totalCost: Decimal {
         // $2 per cake
         var cost = Decimal(quantity) * 2
         
@@ -62,6 +75,7 @@ class Order: Codable {
             cost += Decimal(quantity)
         }
         
+        // $0.5/
         if addSprinkles {
             cost += Decimal(quantity) / 2
         }

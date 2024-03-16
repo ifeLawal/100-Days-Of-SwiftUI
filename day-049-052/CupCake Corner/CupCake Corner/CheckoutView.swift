@@ -25,7 +25,7 @@ struct CheckoutView: View {
                     ProgressView()
                 }.frame(height: 233)
                 
-                Text("Your total cost is \(order.cost, format: .currency(code: "USD"))")
+                Text("Your total cost is \(order.totalCost, format: .currency(code: "USD"))")
                     .font(.title)
                 
                 Button("Place Order") {
