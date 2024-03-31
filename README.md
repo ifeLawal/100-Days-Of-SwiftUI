@@ -19,6 +19,7 @@ If you are looking for a full reference on SwiftUI, the [About SwiftUI](https://
 
 - option + cmd + p: refresh content preview
 - cmd + r: launch simulator
+- ctrl + i: format code
 
 ## Projects
 
