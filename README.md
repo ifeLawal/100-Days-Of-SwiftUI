@@ -20,6 +20,7 @@ If you are looking for a full reference on SwiftUI, the [About SwiftUI](https://
 - option + cmd + p: refresh content preview
 - cmd + r: launch simulator
 - ctrl + i: format code
+- tips to adjust the view: https://stackoverflow.com/questions/46553129/xcode-how-to-view-two-files-side-by-side
 
 ## Projects
 

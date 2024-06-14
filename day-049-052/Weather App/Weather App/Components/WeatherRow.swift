@@ -4,6 +4,7 @@
 //
 //  Created by Ifeoluwa Lawal on 3/18/24.
 //
+//  Supported by SF Symbols
 
 import SwiftUI
 
