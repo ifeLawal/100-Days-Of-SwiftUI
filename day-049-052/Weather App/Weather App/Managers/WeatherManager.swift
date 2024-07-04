@@ -19,6 +19,18 @@ class WeatherManager {
             fatalError("Missing url")
         }
         
+        return try await getWeatherData(url: url)
+    }
+    
+    func getCurrentWeather(city: String) async throws -> ResponseBody {
+        guard let url = URL(string: baseUrl2 + "?q=\(city)&appid=\(appId)") else {
+            fatalError("Missing url")
+        }
+        
+        return try await getWeatherData(url: url)
+    }
+    
+    func getWeatherData(url: URL) async throws -> ResponseBody {
         var urlRequest = URLRequest(url: url)
         
         var (data, response) = try await URLSession.shared.data(for: urlRequest)
@@ -28,12 +40,6 @@ class WeatherManager {
         let decodedData = try JSONDecoder().decode(ResponseBody.self, from: data)
         
         return decodedData
-    }
-    
-    func getCurrentWeather(city: String) {
-        guard let url = URL(string: baseUrl2 + "?q=\(city)&appid=\(appId)") else {
-            fatalError("Missing url")
-        }
     }
 }
 

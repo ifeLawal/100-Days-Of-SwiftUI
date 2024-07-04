@@ -1,0 +1,440 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		415554082C34E80F0062C767 /* LumiereTrailApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415554072C34E80F0062C767 /* LumiereTrailApp.swift */; };
+		4155540C2C34E8110062C767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4155540B2C34E8110062C767 /* Assets.xcassets */; };
+		4155540F2C34E8110062C767 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4155540E2C34E8110062C767 /* Preview Assets.xcassets */; };
+		4155541D2C34E8770062C767 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4155541C2C34E8770062C767 /* Constants.swift */; };
+		4155541F2C34E8CF0062C767 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4155541E2C34E8CF0062C767 /* Location.swift */; };
+		415554212C34E9A30062C767 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415554202C34E9A30062C767 /* MapViewModel.swift */; };
+		415554232C34EA380062C767 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415554222C34EA380062C767 /* WelcomeView.swift */; };
+		415554252C34EA470062C767 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415554242C34EA470062C767 /* MapView.swift */; };
+		415554272C34EADD0062C767 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415554262C34EADD0062C767 /* CustomButton.swift */; };
+		415554292C34EE200062C767 /* AlternativeCode.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 415554282C34EE200062C767 /* AlternativeCode.rtf */; };
+		4155542B2C34EE920062C767 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4155542A2C34EE920062C767 /* LocationManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		415554042C34E80F0062C767 /* LumiereTrail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LumiereTrail.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		415554072C34E80F0062C767 /* LumiereTrailApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumiereTrailApp.swift; sourceTree = "<group>"; };
+		4155540B2C34E8110062C767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4155540E2C34E8110062C767 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4155541C2C34E8770062C767 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../../../Constants.swift; sourceTree = "<group>"; };
+		4155541E2C34E8CF0062C767 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Location.swift; path = ../../../Location.swift; sourceTree = "<group>"; };
+		415554202C34E9A30062C767 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewModel.swift; path = ../../../MapViewModel.swift; sourceTree = "<group>"; };
+		415554222C34EA380062C767 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeView.swift; path = ../../../WelcomeView.swift; sourceTree = "<group>"; };
+		415554242C34EA470062C767 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapView.swift; path = ../../../MapView.swift; sourceTree = "<group>"; };
+		415554262C34EADD0062C767 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = ../../../CustomButton.swift; sourceTree = "<group>"; };
+		415554282C34EE200062C767 /* AlternativeCode.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = AlternativeCode.rtf; path = ../../../AlternativeCode.rtf; sourceTree = "<group>"; };
+		4155542A2C34EE920062C767 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = ../../../LocationManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		415554012C34E80F0062C767 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		415553FB2C34E80F0062C767 = {
+			isa = PBXGroup;
+			children = (
+				415554062C34E80F0062C767 /* LumiereTrail */,
+				415554052C34E80F0062C767 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		415554052C34E80F0062C767 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				415554042C34E80F0062C767 /* LumiereTrail.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		415554062C34E80F0062C767 /* LumiereTrail */ = {
+			isa = PBXGroup;
+			children = (
+				415554162C34E8230062C767 /* Components */,
+				415554192C34E8240062C767 /* Constants */,
+				4155541A2C34E8240062C767 /* Extensions */,
+				4155541B2C34E8240062C767 /* Managers */,
+				415554172C34E8230062C767 /* Models */,
+				415554152C34E8230062C767 /* ViewModels */,
+				415554182C34E8240062C767 /* Views */,
+				415554072C34E80F0062C767 /* LumiereTrailApp.swift */,
+				4155540B2C34E8110062C767 /* Assets.xcassets */,
+				4155540D2C34E8110062C767 /* Preview Content */,
+			);
+			path = LumiereTrail;
+			sourceTree = "<group>";
+		};
+		4155540D2C34E8110062C767 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4155540E2C34E8110062C767 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		415554152C34E8230062C767 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				415554202C34E9A30062C767 /* MapViewModel.swift */,
+			);
+			name = ViewModels;
+			path = "../../LumièreTrail/LumièreTrail/ViewModels";
+			sourceTree = "<group>";
+		};
+		415554162C34E8230062C767 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				415554262C34EADD0062C767 /* CustomButton.swift */,
+			);
+			name = Components;
+			path = "../../LumièreTrail/LumièreTrail/Components";
+			sourceTree = "<group>";
+		};
+		415554172C34E8230062C767 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4155541E2C34E8CF0062C767 /* Location.swift */,
+			);
+			name = Models;
+			path = "../../LumièreTrail/LumièreTrail/Models";
+			sourceTree = "<group>";
+		};
+		415554182C34E8240062C767 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				415554222C34EA380062C767 /* WelcomeView.swift */,
+				415554242C34EA470062C767 /* MapView.swift */,
+				415554282C34EE200062C767 /* AlternativeCode.rtf */,
+			);
+			name = Views;
+			path = "../../LumièreTrail/LumièreTrail/Views";
+			sourceTree = "<group>";
+		};
+		415554192C34E8240062C767 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				4155541C2C34E8770062C767 /* Constants.swift */,
+			);
+			name = Constants;
+			path = "../../LumièreTrail/LumièreTrail/Constants";
+			sourceTree = "<group>";
+		};
+		4155541A2C34E8240062C767 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extensions;
+			path = "../../LumièreTrail/LumièreTrail/Extensions";
+			sourceTree = "<group>";
+		};
+		4155541B2C34E8240062C767 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4155542A2C34EE920062C767 /* LocationManager.swift */,
+			);
+			name = Managers;
+			path = "../../LumièreTrail/LumièreTrail/Managers";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		415554032C34E80F0062C767 /* LumiereTrail */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 415554122C34E8110062C767 /* Build configuration list for PBXNativeTarget "LumiereTrail" */;
+			buildPhases = (
+				415554002C34E80F0062C767 /* Sources */,
+				415554012C34E80F0062C767 /* Frameworks */,
+				415554022C34E80F0062C767 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LumiereTrail;
+			productName = LumiereTrail;
+			productReference = 415554042C34E80F0062C767 /* LumiereTrail.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		415553FC2C34E80F0062C767 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					415554032C34E80F0062C767 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 415553FF2C34E80F0062C767 /* Build configuration list for PBXProject "LumiereTrail" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 415553FB2C34E80F0062C767;
+			productRefGroup = 415554052C34E80F0062C767 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				415554032C34E80F0062C767 /* LumiereTrail */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		415554022C34E80F0062C767 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4155540F2C34E8110062C767 /* Preview Assets.xcassets in Resources */,
+				4155540C2C34E8110062C767 /* Assets.xcassets in Resources */,
+				415554292C34EE200062C767 /* AlternativeCode.rtf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		415554002C34E80F0062C767 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				415554252C34EA470062C767 /* MapView.swift in Sources */,
+				415554232C34EA380062C767 /* WelcomeView.swift in Sources */,
+				415554082C34E80F0062C767 /* LumiereTrailApp.swift in Sources */,
+				415554272C34EADD0062C767 /* CustomButton.swift in Sources */,
+				4155541F2C34E8CF0062C767 /* Location.swift in Sources */,
+				4155541D2C34E8770062C767 /* Constants.swift in Sources */,
+				415554212C34E9A30062C767 /* MapViewModel.swift in Sources */,
+				4155542B2C34EE920062C767 /* LocationManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		415554102C34E8110062C767 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		415554112C34E8110062C767 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		415554132C34E8110062C767 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LumiereTrail/Preview Content\"";
+				DEVELOPMENT_TEAM = 3BZ7DRP4D6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ifelawal.LumiereTrail;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		415554142C34E8110062C767 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LumiereTrail/Preview Content\"";
+				DEVELOPMENT_TEAM = 3BZ7DRP4D6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ifelawal.LumiereTrail;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		415553FF2C34E80F0062C767 /* Build configuration list for PBXProject "LumiereTrail" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				415554102C34E8110062C767 /* Debug */,
+				415554112C34E8110062C767 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		415554122C34E8110062C767 /* Build configuration list for PBXNativeTarget "LumiereTrail" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				415554132C34E8110062C767 /* Debug */,
+				415554142C34E8110062C767 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 415553FC2C34E80F0062C767 /* Project object */;
+}
