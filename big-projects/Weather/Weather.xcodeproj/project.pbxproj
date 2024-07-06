@@ -19,6 +19,8 @@
 		4155542D2C34FACC0062C767 /* ResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4155542C2C34FACC0062C767 /* ResponseBody.swift */; };
 		415554302C34FAF50062C767 /* WeatherModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4155542E2C34FAF50062C767 /* WeatherModelData.swift */; };
 		415554312C34FAF50062C767 /* weatherData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4155542F2C34FAF50062C767 /* weatherData.json */; };
+		415554332C371B9B0062C767 /* weatherData_2_5_City.json in Resources */ = {isa = PBXBuildFile; fileRef = 415554322C371B9B0062C767 /* weatherData_2_5_City.json */; };
+		415554352C371CDA0062C767 /* weatherData_2-5_5_Day.json in Resources */ = {isa = PBXBuildFile; fileRef = 415554342C371CDA0062C767 /* weatherData_2-5_5_Day.json */; };
 		418168B32BE6A1BB001A9C66 /* SingleLocationWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418168B22BE6A1BB001A9C66 /* SingleLocationWeatherView.swift */; };
 		418168B52BE6A480001A9C66 /* TimeWeatherTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418168B42BE6A480001A9C66 /* TimeWeatherTile.swift */; };
 		418168B72BE6A4A7001A9C66 /* WeatherDateForecastRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418168B62BE6A4A7001A9C66 /* WeatherDateForecastRow.swift */; };
@@ -53,6 +55,8 @@
 		4155542C2C34FACC0062C767 /* ResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseBody.swift; sourceTree = "<group>"; };
 		4155542E2C34FAF50062C767 /* WeatherModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherModelData.swift; path = "../../../../day-049-052/Weather App/Weather App/Preview Content/WeatherModelData.swift"; sourceTree = "<group>"; };
 		4155542F2C34FAF50062C767 /* weatherData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = weatherData.json; path = "../../../../day-049-052/Weather App/Weather App/Preview Content/weatherData.json"; sourceTree = "<group>"; };
+		415554322C371B9B0062C767 /* weatherData_2_5_City.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = weatherData_2_5_City.json; path = "../../../../day-049-052/Weather App/Weather App/Preview Content/weatherData_2_5_City.json"; sourceTree = "<group>"; };
+		415554342C371CDA0062C767 /* weatherData_2-5_5_Day.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "weatherData_2-5_5_Day.json"; path = "../../../../day-049-052/Weather App/Weather App/Preview Content/weatherData_2-5_5_Day.json"; sourceTree = "<group>"; };
 		418168B22BE6A1BB001A9C66 /* SingleLocationWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLocationWeatherView.swift; sourceTree = "<group>"; };
 		418168B42BE6A480001A9C66 /* TimeWeatherTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeWeatherTile.swift; sourceTree = "<group>"; };
 		418168B62BE6A4A7001A9C66 /* WeatherDateForecastRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDateForecastRow.swift; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 		414BDC0E2BC2145D0008074D /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				415554342C371CDA0062C767 /* weatherData_2-5_5_Day.json */,
+				415554322C371B9B0062C767 /* weatherData_2_5_City.json */,
 				4155542F2C34FAF50062C767 /* weatherData.json */,
 				4155542E2C34FAF50062C767 /* WeatherModelData.swift */,
 				414BDC0F2BC2145D0008074D /* Preview Assets.xcassets */,
@@ -259,6 +265,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				415554352C371CDA0062C767 /* weatherData_2-5_5_Day.json in Resources */,
+				415554332C371B9B0062C767 /* weatherData_2_5_City.json in Resources */,
 				414BDC102BC2145D0008074D /* Preview Assets.xcassets in Resources */,
 				415554312C34FAF50062C767 /* weatherData.json in Resources */,
 				414BDC0D2BC2145D0008074D /* Assets.xcassets in Resources */,
