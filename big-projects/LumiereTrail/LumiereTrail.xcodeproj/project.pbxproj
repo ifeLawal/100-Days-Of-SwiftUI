@@ -18,6 +18,7 @@
 		415554272C34EADD0062C767 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415554262C34EADD0062C767 /* CustomButton.swift */; };
 		415554292C34EE200062C767 /* AlternativeCode.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 415554282C34EE200062C767 /* AlternativeCode.rtf */; };
 		4155542B2C34EE920062C767 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4155542A2C34EE920062C767 /* LocationManager.swift */; };
+		415554482C3A40C60062C767 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415554472C3A40C60062C767 /* ViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		415554262C34EADD0062C767 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = ../../../CustomButton.swift; sourceTree = "<group>"; };
 		415554282C34EE200062C767 /* AlternativeCode.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = AlternativeCode.rtf; path = ../../../AlternativeCode.rtf; sourceTree = "<group>"; };
 		4155542A2C34EE920062C767 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = ../../../LocationManager.swift; sourceTree = "<group>"; };
+		415554472C3A40C60062C767 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewExtensions.swift; path = ../../../Weather/Weather/Views/ViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 		4155541A2C34E8240062C767 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				415554472C3A40C60062C767 /* ViewExtensions.swift */,
 			);
 			name = Extensions;
 			path = "../../LumièreTrail/LumièreTrail/Extensions";
@@ -226,6 +229,7 @@
 				415554232C34EA380062C767 /* WelcomeView.swift in Sources */,
 				415554082C34E80F0062C767 /* LumiereTrailApp.swift in Sources */,
 				415554272C34EADD0062C767 /* CustomButton.swift in Sources */,
+				415554482C3A40C60062C767 /* ViewExtensions.swift in Sources */,
 				4155541F2C34E8CF0062C767 /* Location.swift in Sources */,
 				4155541D2C34E8770062C767 /* Constants.swift in Sources */,
 				415554212C34E9A30062C767 /* MapViewModel.swift in Sources */,

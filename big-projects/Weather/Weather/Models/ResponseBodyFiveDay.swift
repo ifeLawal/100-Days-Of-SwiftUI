@@ -1,20 +1,29 @@
 //
-//  ResponseBody.swift
+//  ResponseBodyFiveDay.swift
 //  Weather
 //
-//  Created by Ifeoluwa Lawal on 7/2/24.
+//  Created by Ifeoluwa Lawal on 7/6/24.
 //
 
 import Foundation
 
 // Model of the response body we get from calling the OpenWeather API
-struct ResponseBody: Decodable {
-    var coord: CoordinatesResponse
-    var weather: [WeatherResponse]
-    var main: MainResponse
-    var name: String
-    var wind: WindResponse
-    var sys: SystemResponse
+struct ResponseBodyFiveDay: Decodable {
+    var list: [WeatherForecast]
+    var city: CityResponse
+    
+    struct CityResponse: Decodable {
+        var name: String
+        var coord: CoordinatesResponse
+        var country: String
+    }
+    
+    struct WeatherForecast: Decodable {
+        var weather: [WeatherResponse]
+        var main: MainResponse
+        var wind: WindResponse
+        var dt_txt: String
+    }
 
     struct CoordinatesResponse: Decodable {
         var lon: Double
@@ -22,7 +31,6 @@ struct ResponseBody: Decodable {
     }
 
     struct WeatherResponse: Decodable {
-        var id: Double
         var main: String
         var description: String
         var icon: String
@@ -51,8 +59,12 @@ struct ResponseBody: Decodable {
     }
 }
 
-extension ResponseBody.MainResponse {
+extension ResponseBodyFiveDay.MainResponse {
     var feelsLike: Double { return feels_like }
     var tempMin: Double { return temp_min }
     var tempMax: Double { return temp_max }
+}
+
+extension ResponseBodyFiveDay.WeatherForecast {
+    var dtTxt: String { return dt_txt }
 }

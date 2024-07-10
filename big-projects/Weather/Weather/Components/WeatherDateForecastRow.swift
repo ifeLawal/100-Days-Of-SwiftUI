@@ -11,7 +11,7 @@ struct WeatherDateForecastRow: View {
     var date: String = "Mar, 13"
     var weather: String = "sun"
     var temperature: String = "14"
-    var unit: String = "°C"
+    var unit: String = "°F"
     var fontSize: CGFloat = 20
     var width: CGFloat = 40
     var height: CGFloat = 40

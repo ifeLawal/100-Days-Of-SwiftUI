@@ -33,7 +33,8 @@ struct CitySearchView: View {
                 .onChange(of: searchText) { newValue in
                     viewModel.searchCity(query: newValue)
                 }
-
+                .padding(.top, 10)
+                
                 if isSearching {
                     Button("Cancel") {
                         searchText = ""
@@ -47,7 +48,7 @@ struct CitySearchView: View {
             }
             .padding(.horizontal)
             .navigationBarHidden(isSearching)
-
+            
             if isSearching && !viewModel.searchResults.isEmpty {
                 List(viewModel.searchResults) { city in
                     HStack {
@@ -68,32 +69,33 @@ struct CitySearchView: View {
                     /*
                      alternative for single search (no adding to a list)
                      Text(city.name)
-                        .onTapGesture {
-                            searchText = city.name
-                            isSearching = false
-                            weatherViewModel.fetchWeather(for: city.name)
-                            selectedCity = city
-                            showCityDetail = true
-                        } */
+                     .onTapGesture {
+                     searchText = city.name
+                     isSearching = false
+                     weatherViewModel.fetchWeather(for: city.name)
+                     selectedCity = city
+                     showCityDetail = true
+                     } */
                 }
-                .frame(height: 200) // Adjust height as needed
+                Spacer()
+                // Adjust height as needed
             }
             
             /* https://stackoverflow.com/questions/73036878/navigationlink-isactive-deprecated#:~:text=New%20way%20to
-            NavigationLink(destination: WeatherDetailView(viewModel: weatherViewModel), isActive: $navigateToWeatherDetail) {
-                            EmptyView()
-                        }.hidden() // Hidden navigation link to trigger programmatically
+             NavigationLink(destination: WeatherDetailView(viewModel: weatherViewModel), isActive: $navigateToWeatherDetail) {
+             EmptyView()
+             }.hidden() // Hidden navigation link to trigger programmatically
              */
-
+            
             NavigationLink(
-                destination: WeatherDetailView(viewModel: weatherViewModel),
+                destination: EnhancedWeatherDetailView(viewModel: weatherViewModel),
                 // destination: CityDetailView(city: selectedCity?.name ?? ""),
                 isActive: $showCityDetail,
                 label: {
                     EmptyView()
                 })
+            Spacer()
         }
-        Spacer()
     }
 }
 

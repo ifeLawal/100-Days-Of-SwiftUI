@@ -8,6 +8,9 @@
 import Foundation
 
 var previewWeather: ResponseBody = load("weatherData")
+var previewCityWeather: ResponseBody = load("weatherData_2_5_City")
+var previewFiveDayWeather: ResponseBodyFiveDay = load("weatherData_2-5_5_Day")
+var previewCityList: [String] = load("cities_array")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

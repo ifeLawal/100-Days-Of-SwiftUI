@@ -15,18 +15,23 @@ extension Double {
 }
 
 enum Weather: String {
-    case sun, rain, boltRain, wind, snow, cloud, cloudSun, cloudMoon
+    case clear, rain, drizzle, thunderstorm, wind, snow, cloud, clouds, cloudSun, cloudMoon,
+         haze, mist, smoke, dust, fog, ash, squall, tornado
 }
 
 func getIcon(weather: String) -> String {
-    switch weather {
-    case Weather.sun.rawValue:
+    switch weather.lowercased() {
+    case Weather.clear.rawValue:
         "sun.max.fill"
     case Weather.rain.rawValue:
         "cloud.rain.fill"
-    case Weather.boltRain.rawValue:
+    case Weather.drizzle.rawValue:
+        "cloud.heavyrain"
+    case Weather.thunderstorm.rawValue:
         "cloud.bolt.rain.fill"
     case Weather.cloud.rawValue:
+        "cloud.fill"
+    case Weather.clouds.rawValue:
         "cloud.fill"
     case Weather.cloudSun.rawValue:
         "cloud.sun.fill"
@@ -36,6 +41,22 @@ func getIcon(weather: String) -> String {
         "cloud.snow"
     case Weather.wind.rawValue:
         "wind"
+    case Weather.haze.rawValue:
+        "sun.haze"
+    case Weather.mist.rawValue:
+        "sun.haze"
+    case Weather.smoke.rawValue:
+        "smoke"
+    case Weather.dust.rawValue:
+        "sun.dust"
+    case Weather.fog.rawValue:
+        "cloud.fog"
+    case Weather.ash.rawValue:
+        "sun.haze"
+    case Weather.squall.rawValue:
+        "sun.haze"
+    case Weather.tornado.rawValue:
+        "tornado"
     default:
         "questionmark"
     
@@ -45,6 +66,18 @@ func getIcon(weather: String) -> String {
 extension View {
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape(RoundedCorner(radius: radius, corners: corners))
+    }
+    
+    func runAsyncTask(_ action: @escaping () async throws -> Void, onError: @escaping (Error) -> Void = { _ in }) -> some View {
+        self.onAppear {
+            Task {
+                do {
+                    try await action()
+                } catch {
+                    onError(error)
+                }
+            }
+        }
     }
 }
 
@@ -58,10 +91,3 @@ struct RoundedCorner: Shape {
         return Path(path.cgPath)
     }
 }
-
-//extension MKCoordinateRegion {
-//    
-//    static func defaultRegion() -> MKCoordinateRegion {
-//        MKCoordinateRegion(center: CLLocationCoordinate2D.init(latitude: 29.726819, longitude: -95.393692), latitudinalMeters: 100, longitudinalMeters: 100)
-//    }
-//}

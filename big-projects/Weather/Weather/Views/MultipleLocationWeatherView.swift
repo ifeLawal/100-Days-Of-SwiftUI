@@ -22,9 +22,7 @@ struct MultipleLocationWeatherView: View {
                     CustomColors.fullAppBottomGradientColor], startPoint: .top, endPoint: .bottom)
                              .ignoresSafeArea()
                     VStack {
-                        VStack {
-                            // SearchBar()
-                            
+                        VStack {                            
                             EnhancedWeatherDetailView(viewModel: weatherViewModel)
                         }
                         .padding([.leading, .trailing], 20)
@@ -37,7 +35,7 @@ struct MultipleLocationWeatherView: View {
                             }) {
                                 SFSymbolsIcon(isOriginalRender: true, iconName: "plus.circle", foregroundColor: Color(hue: 1.0, saturation: 0.0, brightness: 0.888), width: 50, height: 50)
                             }
-                            .sheet(isPresented: $showingSearchView) {
+                            .fullScreenCover(isPresented: $showingSearchView) {
                                 CitySearchView(viewModel: citySearchViewModel, weatherViewModel: weatherViewModel, isPresented: $showingSearchView)
                             }
                         }

@@ -11,34 +11,24 @@ struct CardView: View {
     var foregroundColor: Color
     var backgroundColor: Color
     var padding: Double = 20
-    @State var weatherData: WeatherData = WeatherData(city: "New York", temperature: 70, condition: "sun")
-    
-    var city: String = "Vermont"
-    var country: String = "USA"
-    
-    var percipitation: Double = 0
-    var humidity: Double = 58
-    var windSpeed: Double = 6
-    var weather: String = "sun"
-    
-    var temperature: Double = 9
+    @State var weatherData: ResponseBody = previewCityWeather
         
     var body: some View {
         VStack(alignment: .leading)  {
             HStack {
                 VStack(alignment: .leading) {
-                    Text(weatherData.city + ",")
+                    Text(weatherData.name + ",")
                         .fontWeight(.heavy)
-                    Text(country)
+                    Text(weatherData.sys.country)
                 }
                 Spacer()
-                SFSymbolsIcon(isOriginalRender: true, iconName: getIcon(weather: weatherData.condition), foregroundColor: foregroundColor, width: 40, height: 40, paddingVertical: 0)
+                SFSymbolsIcon(isOriginalRender: true, iconName: getIcon(weather: weatherData.weather[0].main), foregroundColor: foregroundColor, width: 40, height: 40, paddingVertical: 0)
             }
             
-            WeatherRow(percipitation: percipitation,
-                       humidity: humidity,
-                       windSpeed: windSpeed,
-                       temperature: weatherData.temperature
+            WeatherRow(description: weatherData.weather[0].description,
+                       humidity: weatherData.main.humidity,
+                       windSpeed: weatherData.wind.speed,
+                       temperature: weatherData.main.temp
             )
         }
         .padding(padding)

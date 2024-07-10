@@ -12,6 +12,7 @@ struct EnhancedWeatherDetailView: View {
     // let weatherData: WeatherData?
     @State private var navigateToCityDetail = false
     @State private var cityName = "New York"
+    @State private var buttonText = "More info"
 
     var body: some View {
         VStack {
@@ -36,16 +37,29 @@ struct EnhancedWeatherDetailView: View {
                                         weatherData: weatherData)
                                 } else {
                                     Text("Loading...")
-                                        .onAppear {
-                                            viewModel.fetchWeather(for: city.name)
-                                        }
+                                        .runAsyncTask({
+                                            try await viewModel.fetchWeather(for: city.name)
+                                        }, onError: { error in
+                                            print("Error fetching weather: \(error)")
+                                        })
                                 }
                                 HStack {
                                     Button(action: {
                                         cityName = city.name
-                                        navigateToCityDetail = true
+                                        Task {
+                                                try await viewModel.fetchFiveDayForecast(
+                                                    longitude: viewModel.weatherData[cityName]?.coord.lon ?? 0,
+                                                    latitude: viewModel.weatherData[cityName]?.coord.lat ?? 0
+                                                )
+                                                if viewModel.fiveDayWeatherData != nil {
+                                                    buttonText = "More info"
+                                                    navigateToCityDetail = true
+                                                } else {
+                                                    buttonText = "Failure. Try again"
+                                                }
+                                            }
                                     }) {
-                                        Text("More info")
+                                        Text(buttonText)
                                             .foregroundColor(.blue)
                                             .padding(10)
                                             .background(Color(.systemGray5)).cornerRadius(8)     .shadow(radius: 5)
@@ -70,7 +84,7 @@ struct EnhancedWeatherDetailView: View {
             }
         }
         
-        NavigationLink(destination: SingleLocationWeatherView(city: cityName), isActive: $navigateToCityDetail) {
+        NavigationLink(destination: SingleLocationWeatherView(response: viewModel.fiveDayWeatherData, city: cityName), isActive: $navigateToCityDetail) {
                         EmptyView()
                     }.hidden() // Hidden navigation link to trigger programmatically
     }

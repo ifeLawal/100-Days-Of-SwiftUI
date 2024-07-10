@@ -9,8 +9,9 @@ import SwiftUI
 
 struct SingleLocationWeatherView: View {
     @ObservedObject var viewModel: WeatherViewModel = WeatherViewModel()
+    var response: ResponseBodyFiveDay?
     var city: String = "New York"
-    
+        
     var body: some View {
         NavigationView {
             ZStack {
@@ -25,129 +26,160 @@ struct SingleLocationWeatherView: View {
                         SFSymbolsIcon(iconName: "mappin.and.ellipse", foregroundColor: .white, width: 25, height: 25, paddingHorizontal: 0)
                         Text(city)
                             .fontWeight(.heavy)
-                            .font(.largeTitle)         
+                            .font(.largeTitle)
                     }
                     .padding([.bottom], 10)
                     
                     // End locaton
-                    
-                    // Start today time weather
-                    VStack {
-                        HStack {
-                            Text("Today")
-                                .fontWeight(.heavy)
-                                .font(.system(size: 20))
-                            
-                            Spacer()
-                            
-                            Text("Mar. 12")
-                        }
-                        .padding([.leading, .trailing], 10)
-                        .padding([.bottom], 10)
-                        
-                        ScrollView(.horizontal) {
-                            HStack {
-                                /*
-                                 var temperature: String = "14"
-                                 var unit: String = "°C"
-                                 var weather: String = "cloudSun"
-                                 var time: String = "17:00"
-                                 */
-                                
-                                TimeWeatherTile(
-                                    temperature: "20",
-                                    weather: "cloudSun",
-                                    time: "15:00",
-                                    backgroundColor: Color.clear
-                                )
-                                TimeWeatherTile(
-                                    temperature: "18",
-                                    weather: "cloudSun",
-                                    time: "16:00",
-                                    backgroundColor: Color.clear
-                                )
-                                TimeWeatherTile(
-                                    addShadow: true,
-                                    temperature: "14",
-                                    weather: "cloud",
-                                    time: "17:00"
-                                )
-                                TimeWeatherTile(
-                                    temperature: "11",
-                                    weather: "cloudMoon",
-                                    time: "18:00",
-                                    backgroundColor: Color.clear
-                                )
-                                TimeWeatherTile(
-                                    temperature: "12",
-                                    weather: "cloudMoon",
-                                    time: "18:00",
-                                    backgroundColor: Color.clear
-                                )
-                            }
-                        }
+                    switch viewModel.state {
+                    case .idle:
+                        Text("Attempting to fetch data")
+                    case .loading:
+                        Text("Loading...")
+                    case .success:
+                        forecastBody
+                            .padding([.leading, .trailing], 10)
+                            .padding([.top, .bottom], 10)
+                            // End of weekly forecast view
+                    case .failure(let error):
+                        Text("Error: \(error.localizedDescription)")
                     }
-                    .padding([.bottom])
-                    // End today time weather
-                
-                    // Start weekly forecast
-                    VStack {
-                        HStack {
-                            Text("Upcoming Days")
-                                .fontWeight(.bold)
-                                .font(.system(size: 20))
-                            
-                            Spacer()
-                            
-                            SFSymbolsIcon(iconName: "calendar")
-                        }
-                        ScrollView(.vertical) {
-                            VStack {
-                                /*
-                                 var date: String = "Mar, 13"
-                                 var weather: String = "sun"
-                                 var temperature: String = "14"
-                                 var unit: String = "°C"
-                                 */
-                                WeatherDateForecastRow(
-                                    date: "Mar, 13",
-                                    weather: "boltRain",
-                                    temperature: "20"
-                                )
-                                WeatherDateForecastRow(
-                                    date: "Mar, 14",
-                                    weather: "rain",
-                                    temperature: "22"
-                                )
-                                WeatherDateForecastRow(
-                                    date: "Mar, 15",
-                                    weather: "sun",
-                                    temperature: "34"
-                                )
-                                WeatherDateForecastRow(
-                                    date: "Mar, 16",
-                                    weather: "cloud",
-                                    temperature: "27"
-                                )
-                                WeatherDateForecastRow(
-                                    date: "Mar, 17",
-                                    weather: "cloudSun",
-                                    temperature: "32"
-                                )
-                            }
-                        }
-                    }
-                    .padding([.leading, .trailing], 10)
-                    .padding([.top, .bottom], 10)
-                    // End weekly forecast
+
                     Spacer()
+
                 }
                 .padding([.leading, .trailing], 20)
+                
             }.foregroundStyle(.white)
+        }
+        .navigationBarTitleDisplayMode(.inline)
+    }
+    
+    var forecastBody: some View {
+        VStack {
+            // Start today time weather
+            if let response = response {
+                VStack {
+                    HStack {
+                        Text("Tomorrow")
+                            .fontWeight(.heavy)
+                            .font(.system(size: 20))
+                        
+                        Spacer()
+                        
+                        Text(response.list[1].dtTxt.formattedDate() ?? "-")
+                    }
+                    .padding([.leading, .trailing], 10)
+                    .padding([.bottom], 10)
+                    
+                    ScrollView(.horizontal) {
+                        HStack {
+                            TimeWeatherTile(
+                                temperature: String(Int(response.list[1].main.temp)),
+                                weather: response.list[1].weather[0].main,
+                                time: response.list[1].dtTxt.formattedTime() ?? "-",
+                                backgroundColor: Color.clear
+                            )
+                            TimeWeatherTile(
+                                temperature: String(Int(response.list[2].main.temp)),
+                                weather: response.list[2].weather[0].main,
+                                time: response.list[2].dtTxt.formattedTime() ?? "-",
+                                backgroundColor: Color.clear
+                            )
+                            TimeWeatherTile(
+                                temperature: String(Int(response.list[3].main.temp)),
+                                weather: response.list[3].weather[0].main,
+                                time: response.list[3].dtTxt.formattedTime() ?? "-",
+                                backgroundColor: Color.clear
+                            )
+                            TimeWeatherTile(
+                                addShadow: true,
+                                temperature: String(Int(response.list[4].main.temp)),
+                                weather: response.list[4].weather[0].main,
+                                time: response.list[4].dtTxt.formattedTime() ?? "-"
+                            )
+                            TimeWeatherTile(
+                                temperature: String(Int(response.list[5].main.temp)),
+                                weather: response.list[5].weather[0].main,
+                                time: response.list[5].dtTxt.formattedTime() ?? "-",
+                                backgroundColor: Color.clear
+                            )
+                            TimeWeatherTile(
+                                temperature: String(Int(response.list[6].main.temp)),
+                                weather: response.list[6].weather[0].main,
+                                time: response.list[6].dtTxt.formattedTime() ?? "-",
+                                backgroundColor: Color.clear
+                            )
+                            TimeWeatherTile(
+                                temperature: String(Int(response.list[7].main.temp)),
+                                weather: response.list[7].weather[0].main,
+                                time: response.list[7].dtTxt.formattedTime() ?? "-",
+                                backgroundColor: Color.clear
+                            )
+                            TimeWeatherTile(
+                                temperature: String(Int(response.list[8].main.temp)),
+                                weather: response.list[8].weather[0].main,
+                                time: response.list[8].dtTxt.formattedTime() ?? "-",
+                                backgroundColor: Color.clear
+                            )
+                        }
+                    }
+                }
+                .padding([.bottom])
+                // End today time weather
+                
+                // Start weekly forecast
+                VStack {
+                    HStack {
+                        Text("Upcoming Days")
+                            .fontWeight(.bold)
+                            .font(.system(size: 20))
+                        
+                        Spacer()
+                        
+                        SFSymbolsIcon(iconName: "calendar")
+                    }
+                    ScrollView(.vertical) {
+                        VStack {
+                            /*
+                             var date: String = "Mar, 13"
+                             var weather: String = "sun"
+                             var temperature: String = "14"
+                             var unit: String = "°C"
+                             */
+                            WeatherDateForecastRow(
+                                date: response.list[1].dtTxt.formattedDate() ?? "-",
+                                weather: response.list[1].weather[0].main,
+                                temperature: String(Int(response.list[1].main.temp))
+                            )
+                            WeatherDateForecastRow(
+                                date: response.list[9].dtTxt.formattedDate() ?? "-",
+                                weather: response.list[9].weather[0].main,
+                                temperature: String(Int(response.list[9].main.temp))
+                            )
+                            WeatherDateForecastRow(
+                                date: response.list[17].dtTxt.formattedDate() ?? "-",
+                                weather: response.list[17].weather[0].main,
+                                temperature: String(Int(response.list[17].main.temp))
+                            )
+                            WeatherDateForecastRow(
+                                date: response.list[25].dtTxt.formattedDate() ?? "-",
+                                weather: response.list[25].weather[0].main,
+                                temperature: String(Int(response.list[25].main.temp))
+                            )
+                            WeatherDateForecastRow(
+                                date: response.list[33].dtTxt.formattedDate() ?? "-",
+                                weather: response.list[33].weather[0].main,
+                                temperature: String(Int(response.list[33].main.temp))
+                            )
+                        }
+                    }
+                }
+            }
         }
     }
 }
 
 #Preview {
-    SingleLocationWeatherView()
+    SingleLocationWeatherView(response: previewFiveDayWeather)
 }

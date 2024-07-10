@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WeatherRow: View {
-    var percipitation: Double = 0
+    var description: String = "Clear Sky"
     var humidity: Double = 58
     var windSpeed: Double = 6
     
@@ -17,9 +17,9 @@ struct WeatherRow: View {
     var body: some View {
         HStack() {
             VStack(alignment: .leading) {
-                Text("Precipitation: \(percipitation.roundDouble())%")
+                Text("Description: \(description)")
                 Text("Humidity: \(humidity.roundDouble())%")
-                Text("Wind: \(windSpeed.roundDouble()) km/h")
+                Text("Wind: \(windSpeed.roundDouble()) mph")
             }
             Spacer()
             VStack {

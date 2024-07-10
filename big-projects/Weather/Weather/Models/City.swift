@@ -9,5 +9,5 @@ import Foundation
 
 struct City: Identifiable, Codable {
     let id = UUID()
-    let name: String
+    var name: String
 }

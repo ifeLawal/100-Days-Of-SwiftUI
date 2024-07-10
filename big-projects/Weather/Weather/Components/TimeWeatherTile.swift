@@ -9,8 +9,8 @@ import SwiftUI
 
 struct TimeWeatherTile: View {
     @State var addShadow: Bool = false
-    var temperature: String = "14"
-    var unit: String = "°C"
+    var temperature: String = "14.09"
+    var unit: String = "°F"
     var weather: String = "cloudSun"
     var time: String = "17:00"
     var foregroundColor: Color = .white
