@@ -14,4 +14,10 @@ struct Constants {
         Location(name: "Central Park", coordinate: CLLocationCoordinate2D(latitude: 40.7851, longitude: -73.9683)),
         Location(name: "Coney Island", coordinate: CLLocationCoordinate2D(latitude: 40.5755, longitude: -73.9829))
     ]
+    
+    static let initialMapLocations = [
+        MapLocation(name: "Statue of Liberty", address: "-", latitude: 40.6892, longitude: -74.0445),
+        MapLocation(name: "Central Park", address: "-", latitude: 40.7851, longitude: -73.9683),
+        MapLocation(name: "Coney Island", address: "-", latitude: 40.5755, longitude: -73.9829)
+    ]
 }

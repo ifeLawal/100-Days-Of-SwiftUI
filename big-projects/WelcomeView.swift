@@ -15,10 +15,10 @@ struct WelcomeView: View {
                     .font(.largeTitle)
                     .padding()
                 
-                NavigationLink(
-                    destination: MapView()) {
-                        CustomButton(title: "Map View")
-                    }
+//                NavigationLink(
+//                    destination: MapView(listMapLocations: Constants.initialMapLocations)) {
+//                        CustomButton(title: "Map View")
+//                    }
             }
         }
     }

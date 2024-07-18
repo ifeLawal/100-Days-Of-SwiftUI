@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct LumiereTrailApp: App {
     var body: some Scene {
         WindowGroup {
             WelcomeView()
+                .modelContainer(ModelContainerProvider.shared)
         }
     }
 }

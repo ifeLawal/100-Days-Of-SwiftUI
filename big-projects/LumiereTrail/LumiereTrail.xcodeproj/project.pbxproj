@@ -19,6 +19,8 @@
 		415554292C34EE200062C767 /* AlternativeCode.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 415554282C34EE200062C767 /* AlternativeCode.rtf */; };
 		4155542B2C34EE920062C767 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4155542A2C34EE920062C767 /* LocationManager.swift */; };
 		415554482C3A40C60062C767 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415554472C3A40C60062C767 /* ViewExtensions.swift */; };
+		4155544A2C3F3F0A0062C767 /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415554492C3F3F0A0062C767 /* MapLocation.swift */; };
+		4155544C2C4331380062C767 /* ModelContainerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4155544B2C4331380062C767 /* ModelContainerProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		415554282C34EE200062C767 /* AlternativeCode.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = AlternativeCode.rtf; path = ../../../AlternativeCode.rtf; sourceTree = "<group>"; };
 		4155542A2C34EE920062C767 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = ../../../LocationManager.swift; sourceTree = "<group>"; };
 		415554472C3A40C60062C767 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewExtensions.swift; path = ../../../Weather/Weather/Views/ViewExtensions.swift; sourceTree = "<group>"; };
+		415554492C3F3F0A0062C767 /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapLocation.swift; path = ../../../../../../../2024/MyTrips/MapLocation.swift; sourceTree = "<group>"; };
+		4155544B2C4331380062C767 /* ModelContainerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModelContainerProvider.swift; path = ../../../../../../../2024/MyTrips/ModelContainerProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				4155541E2C34E8CF0062C767 /* Location.swift */,
+				415554492C3F3F0A0062C767 /* MapLocation.swift */,
+				4155544B2C4331380062C767 /* ModelContainerProvider.swift */,
 			);
 			name = Models;
 			path = "../../LumièreTrail/LumièreTrail/Models";
@@ -226,11 +232,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				415554252C34EA470062C767 /* MapView.swift in Sources */,
+				4155544A2C3F3F0A0062C767 /* MapLocation.swift in Sources */,
 				415554232C34EA380062C767 /* WelcomeView.swift in Sources */,
 				415554082C34E80F0062C767 /* LumiereTrailApp.swift in Sources */,
 				415554272C34EADD0062C767 /* CustomButton.swift in Sources */,
 				415554482C3A40C60062C767 /* ViewExtensions.swift in Sources */,
 				4155541F2C34E8CF0062C767 /* Location.swift in Sources */,
+				4155544C2C4331380062C767 /* ModelContainerProvider.swift in Sources */,
 				4155541D2C34E8770062C767 /* Constants.swift in Sources */,
 				415554212C34E9A30062C767 /* MapViewModel.swift in Sources */,
 				4155542B2C34EE920062C767 /* LocationManager.swift in Sources */,

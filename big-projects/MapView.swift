@@ -7,8 +7,10 @@
 
 import SwiftUI
 import MapKit
+import SwiftData
 
 struct MapView: View {
+    @Environment(\.modelContext) var modelContext: ModelContext
     @StateObject private var viewModel = MapViewModel()
     @State private var searchText = ""
     
@@ -16,6 +18,7 @@ struct MapView: View {
     @State private var selectedLocation: Location?
     @State private var isSheetPresented = false
     
+    var listMapLocations: [MapLocation]
     // https://www.youtube.com/watch?v=9xzHJAT_Iqk&list=PLBn01m5Vbs4A0dus7gfymgj0UI1qKTe3M
     var body: some View {
         Map(initialPosition: .region(viewModel.region)) {
@@ -23,7 +26,7 @@ struct MapView: View {
             // UserAnnotation()
             
             // Annotation()
-            ForEach(viewModel.locations) { location in
+            ForEach(listMapLocations) { location in
                 Group {
                     Marker(location.name, systemImage: "film", coordinate: location.coordinate)
                         .tint(.blue)
@@ -56,9 +59,11 @@ struct MapView: View {
             // MapPitchButton()
             MapUserLocationButton()
         }
+        .modelContainer(ModelContainerProvider.shared)
     }
 }
 
 #Preview {
-    MapView()
+    MapView(listMapLocations: Constants.initialMapLocations)
+        .modelContainer(ModelContainerProvider.shared)
 }
