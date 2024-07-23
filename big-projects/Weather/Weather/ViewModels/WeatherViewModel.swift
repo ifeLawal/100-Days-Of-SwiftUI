@@ -22,12 +22,11 @@ class WeatherViewModel: ObservableObject {
     @Published var state: FetchState<[String]> = .idle
     
     private var cancellables = Set<AnyCancellable>()
-    private let weatherManager: WeatherManager
+    private let weatherManager: WeatherManagerProtocol
     private let selectedCitiesKey = "SelectedCitiesKey"
     
-    init() {
-        // For demonstration, let's use a hardcoded list of cities
-        self.weatherManager = WeatherManager()
+    init(weatherManager: WeatherManagerProtocol = WeatherManager()) {
+        self.weatherManager = weatherManager
         loadSelectedCities()
         let cities = previewCityList
         state = .success
