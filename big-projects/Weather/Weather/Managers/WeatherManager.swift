@@ -22,7 +22,7 @@ class WeatherManager: WeatherManagerProtocol {
     // 
     // https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=44.34&lon=10.99&appid={API key}
     
-    var appId = ""
+    var appId = "ea6cf8ed6924aa6c0f4f0d01e0edf0b6"
     var useCelsius = "units=metric"
     var useFahrenheit = "units=imperial"
     
